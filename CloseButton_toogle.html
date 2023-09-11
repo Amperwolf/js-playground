@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <style>
+        .pane {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            text-align: center;
+            width: 600px;
+            height: 200px;
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+            background-color: lightgoldenrodyellow;
+        }
+        
+        .remove-button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+
+
+    <div id="form">
+        <div id="pane" , class="pane">
+            <h3>Лошадь</h3>
+            <p>Домашняя лошадь — животное семейства непарнокопытных, одомашненный и единственный сохранившийся подвид дикой лошади, вымершей в дикой природе, за исключением небольшой популяции лошади Пржевальского.</p>
+            <button class="remove-button">[x]</button>
+        </div>
+        <div id="pane" class="pane">
+            <h3>Осёл</h3>
+            <p>Домашний осёл (лат. Equus asinus asinus), или ишак, — одомашненный подвид дикого осла (Equus asinus), сыгравший важную историческую роль в развитии хозяйства и культуры человека и по-прежнему широко в хозяйстве многих развивающихся стран.</p>
+            <button class="remove-button">[x]</button>
+        </div>
+        <div id="pane" class="pane">
+            <h3>Кошка</h3>
+            <p>Кошка, или домашняя кошка (лат. Felis silvestris catus), — домашнее животное, одно из наиболее популярных(наряду с собакой) «животных-компаньонов». Являясь одиночным охотником на грызунов и других мелких животных, кошка — социальное животное,
+                использующее для общения широкий диапазон звуковых сигналов.</p>
+            <button class="remove-button">[x]</button>
+        </div>
+    </div>
+    <script>
+        form.onclick = function() {
+            if (event.target.className != 'remove-button') {
+                return
+            } else {
+                let pane = event.target.closest('.pane');
+                pane.remove();
+            }
+        };
+    </script>
+</body>
+
+</html>

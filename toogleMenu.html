@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .tree span:hover {
+            font-weight: bold;
+        }
+        
+        .tree span {
+            cursor: pointer;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="tree" id="tree">
+        <li id="animals">Animals
+            <ul>
+                <li id="mammals">mammals
+                    <ul>
+                        <li id="cows">cows</li>
+                        <li id="donkeys">donkeys</li>
+                        <li id="dogs">dogs</li>
+                        <li id="tigers">tigers</li>
+                    </ul>
+                </li>
+                <li id="other">other
+                    <ul>
+                        <li id="snakes">snakes</li>
+                        <li id="birds">birds</li>
+                        <li id="lizards">lizards</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li id="fish">Fish
+            <ul>
+                <li id="aquarium">aquarium
+                    <ul>
+                        <li id="guppy">guppy</li>
+                        <li id="angelfish">angelfish</li>
+                    </ul>
+                </li>
+                <li id="marine">marine
+                    <ul>
+                        <li id="sea trout">sea trout</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+
+    <script>
+        for (let li of tree.querySelectorAll('li')) {
+            let span = document.createElement('span');
+            li.prepend(span);
+            span.append(span.nextSibling);
+        }
+
+        tree.onclick = function(event) {
+
+            if (event.target.tagName != 'SPAN') {
+                return;
+            }
+
+            let childrenContainer = event.target.parentNode.querySelector('ul');
+            if (!childrenContainer) return;
+
+            childrenContainer.hidden = !childrenContainer.hidden;
+        }
+    </script>
+
+</body>
+
+</html>
